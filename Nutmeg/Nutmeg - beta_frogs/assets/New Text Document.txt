@@ -1,0 +1,19 @@
+	private var _spawnTimer: Number;
+	private var _spawnInterval: Number = 2.5;
+
+	if(_spawnTimer < 0)
+		{
+			spawnAlien();
+			resetSpawnTimer();
+		}
+
+
+	private function resetSpawnTimer():void
+	{
+		_spawnTimer = _spawnInterval;
+		_spawnInterval *= 0.95;
+		if (_spawnInterval < 0.1)
+		{
+			_spawnInterval = 0.1
+		}
+	}
